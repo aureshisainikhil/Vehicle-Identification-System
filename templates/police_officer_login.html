@@ -1,0 +1,24 @@
+{% include "Mhead.html"%}
+<div class="container mt-5">
+    <div class="row">
+          <div class="col-md-4"></div>
+            <div class="col-md-5 mt-4">
+                <div class="card p-3">
+                    <h4 class="text-center text-dark">Police Officer Login</h4>
+                <form action="police_officer_login1" method="post">
+                    <div class="form-group ">
+                        <label for="email" class="form-label"><h6>Email</h6></label>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Enter email" required>
+                    </div>
+                   <div class="form-group mt-1 ">
+                        <label for="password" class="form-label"><h6>Password</h6></label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+                   </div>
+                    <div class="mt-2">
+                    <input type="submit" value="Login" class="btn btn-primary mt-2 w-100">
+                  </div>
+                </form>
+                </div>
+            </div>
+    </div>
+</div>

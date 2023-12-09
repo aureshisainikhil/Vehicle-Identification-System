@@ -1,0 +1,11 @@
+
+{% for driver in drivers %}
+    <input type="radio" name="driver_id" value="{{driver['_id']}}" id="{{driver['_id']}}">
+    <label for="{{driver['_id']}}" class="card p-3 mt-2" style="display:block">
+        <div >
+            <div>{{driver['name']}}</div>
+            <div class="mt-2">{{driver['email']}}</div>
+            <div class="mt-2">{{driver['phone']}}</div>
+        </div>
+    </label>
+{% endfor %}

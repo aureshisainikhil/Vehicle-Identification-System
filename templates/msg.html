@@ -1,0 +1,35 @@
+{% if session['role'] == 'admin' %}
+    {% include "Ahead.html" %}
+{% elif session['role'] == 'DMV' %}
+    {% include "Dhead.html" %}
+{% elif session['role'] == 'police_officer' %}
+    {% include "police_officer_head.html" %}
+{% elif session['role'] == 'driver' %}
+    {% include "driver_head.html" %}
+{% else %}
+    {% include "Mhead.html"%}
+{% endif %}
+
+<div class="container mt-4">
+    <div class="row mt-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mt-5">
+            <div class="card p-3 mt-5">
+                <div class="text-center h3 mt-3">{{ message }}</div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    {% if message2 %}
+    <div class="row mt-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mt-5">
+            <!-- <div class="card p-3 mt-5"> -->
+                <div class="text-center h3 mt-3" style="color: green; font-weight: bold;">{{ message2 }}</div>
+            <!-- </div> -->
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    {% endif %}
+</div>
+

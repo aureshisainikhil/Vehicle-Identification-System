@@ -1,0 +1,22 @@
+{% include "Mhead.html"%}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 mt-5">
+            <div class="card p-3">
+                <h2 class="text-center text-dark">Email </h2>
+                <form action="Email_login2" method="post">
+                    <input type="hidden" name="email"  value="{{email}}">
+                    <input type="hidden" name="OTP"  value="{{OTP}}">
+                    <div class="form-group ">
+                        <label for="email_otp" class="text-dark">Enter OTP</label>
+                        <input type="number" id="email_otp" name="email_otp" class="form-control mt-1" placeholder="Enter OTP" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" class="btn btn-success mt-2 w-100">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

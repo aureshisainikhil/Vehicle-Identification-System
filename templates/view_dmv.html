@@ -1,0 +1,45 @@
+{% include "ADhead.html" %}
+<div class="container mt-4">
+    <div class="row">
+        {%for Dmv in Dmvs:%}
+        <div class="col-md-6">
+            <div class="card p-3 mt-2  text-dark" >
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                         <b>Username</b>
+                         <div>{{Dmv['username']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Email</b>
+                        <div>{{Dmv['email']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Password</b>
+                        <div>{{Dmv['password']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Phone</b>
+                        <div>{{Dmv['phone']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Location</b>
+                        <div>{{Dmv['location']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>City</b>
+                        <div>{{Dmv['city']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>State</b>
+                        <div>{{Dmv['state']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Zip Code</b>
+                        <div>{{Dmv['zip_code']}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>

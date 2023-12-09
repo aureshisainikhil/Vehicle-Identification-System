@@ -1,0 +1,51 @@
+{% include "police_officer_head.html" %}
+
+<div class="container">
+    <div class="row">
+        {% for ticket in tickets %}
+        {% set driver,Registration_document = get_driver_by_vehicle_id(ticket['vehicle_id']) %}
+        <div class="col-md-4">
+            <div class="card p-3 mt-5">
+                <div class="row">
+                    <div>
+                        <label class="form-label"><b>Ticket no:</b></label>
+                        <div>{{ticket["_id"]}}</div>
+                    </div>
+                    <div>
+                        <label class="form-label"><b>Driver Licence number</b></label>
+                        <div>{{driver['driving_licence_number']}}</div>
+                    </div>
+                    <div>
+                        <label class="form-label"><b>Insurance number</b></label>
+                        <div>{{registration_documents['insurance_number']}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><b>Vehicle no:</b></label>
+                        <div>{{registration_documents["vehicle_register_number"]}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><b>Police officer:</b></label>
+                        <div>{{police_officer["name"]}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><b>Reason:</b></label>
+                        <div>{{ticket["reason"]}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><b>Amount:</b></label>
+                        <div>${{ticket["amount"]}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><b>Status:</b></label>
+                        <div>{{ticket["status"]}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><b>Date:</b></label>
+                        <div>{{ticket["date"].strftime("%d/%m/%y")}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

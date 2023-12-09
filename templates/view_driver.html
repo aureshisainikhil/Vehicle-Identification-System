@@ -1,0 +1,50 @@
+{% include "Vhead.html" %}
+<div class="container">
+    <div class="row">
+        {%for vehicleOwner in vehicleOwners:%}
+        <div class="col-md-6">
+            <div class="card p-3 mt-2  text-dark" >
+                <div class="row">
+                    <div class="col-md-6 mt-1">
+                         <b>Name</b>
+                         <div>{{vehicleOwner['name']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <b>Email</b>
+                        <div>{{vehicleOwner['email']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <b>Phone</b>
+                        <div>{{vehicleOwner['phone']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Age</b>
+                        <div>{{vehicleOwner['age']}}</div>
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+                        <b>Password</b>
+                        <div>{{vehicleOwner['password']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Address</b>
+                        <div>{{vehicleOwner['address']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Id Proof</b>
+                        <div>{{vehicleOwner['id_proof']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Image</b>
+                        <div>{{vehicleOwner['picture']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Gender</b>
+                        <div>{{vehicleOwner['gender']}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>

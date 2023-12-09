@@ -1,0 +1,49 @@
+{% include "APhead.html" %}
+<div class="container mt-4">
+    <div class="row">
+        {%for Police_officer in Police_officers:%}
+        <div class="col-md-6">
+            <div class="card p-3 mt-2  text-dark" >
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                         <b>Name</b>
+                         <div>{{Police_officer['name']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Email</b>
+                        <div>{{Police_officer['email']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Password</b>
+                        <div>{{Police_officer['password']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Phone</b>
+                        <div>{{Police_officer['phone']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>SSN</b>
+                        <div>{{Police_officer['ssn']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Date of Birth</b>
+                        <div>{{Police_officer['date_of_birth']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Address</b>
+                        <div>{{Police_officer['address']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Experience</b>
+                        <div>{{Police_officer['experience']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Gender</b>
+                        <div>{{Police_officer['gender']}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>

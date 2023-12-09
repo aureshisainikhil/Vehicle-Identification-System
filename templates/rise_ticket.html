@@ -1,0 +1,104 @@
+{% include "police_officer_head.html" %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="rise_ticket">
+                <input type="search" name="keyword" value="{{keyword}}" class="form-control" placeholder="Search Vehicle With Reg Number" onblur="this.form.submit()">
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        {% for vehicle in vehicles: %}
+        {% set driver,Registration_document = get_driver_by_vehicle_id(vehicle['_id']) %}
+        <div class="col-md-6">
+            <div class="card p-3 mt-2  text-dark" >
+                <div class="row">
+                    <input type="hidden" name="vehicle_id" value="{{vehicle['_id']}}">
+                    <input type="hidden" name="vehicle_owner_id" value="{{vehicle['vehicle_owner_id']}}">
+                    <div class="col-md-6 mt-1">
+                         <b>Vechicle Owner DL</b>
+                         <div>{{driver['driving_licence_number']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-1">
+                         <b>Vehicle Owner Name</b>
+                         <div>{{driver['name']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-1">
+                         <b>Vehicle Name</b>
+                         <div>{{vehicle['vehicle_name']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <b>Vehicle Model</b>
+                        <div>{{vehicle['vehicle_model']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <b>Vehicle Type</b>
+                        <div>{{vehicle['vehicle_type']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <b>Vehicle Manufacturing Year</b>
+                        <div>{{vehicle['vehicle_manufacturing_year']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Vehicle Capacity</b>
+                        <div>{{vehicle['vehicle_capacity']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Vehicle Mileage</b>
+                        <div>{{vehicle['vehicle_mileage']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Vehicle Register Number </b>
+                        <div>{{Registration_document['vehicle_register_number']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Insurance Number</b>
+                        <div>{{Registration_document['insurance_number']}}</div>
+                   </div>
+                   <div class="col-md-6 mt-3">
+                        <b>Vehicle Valid From</b>
+                        <div>{{Registration_document['vehicle_valid_from']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Insurance Valid From </b>
+                        <div>{{Registration_document['insurance_valid_from']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Vehicle Valid to </b>
+                        <div>{{Registration_document['vehicle_valid_to']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <b>Insurance Valid Upto </b>
+                        <div>{{Registration_document['insurance_valid_to']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                         <b>Vehicle Title Number</b>
+                         <div>{{Registration_document['vehicle_title']}}</div>
+                    </div>
+                    <div class="col-md-6 mt-1">
+                        <b>Status</b>
+                        <div>{{Registration_document['status']}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <form action="view_ticket_risen" method="post">
+                                <input type="hidden" name="vehicle_id" value="{{vehicle['_id']}}">
+                                <input type="submit" value="View Ticket" class="btn btn-warning w-100">
+                            </form>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                           <form action="add_ticket" method="post">
+                               <input type="hidden" name="vehicle_id" value="{{vehicle['_id']}}">
+                            <input type="submit" value="Add Ticket" class="btn btn-success w-100">
+                           </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

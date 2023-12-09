@@ -1,0 +1,97 @@
+{% include "APhead.html"%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card p-3 mt-4">
+                <form action="Add_police_officer1" method="post">
+                    <div class="text-center"><h4>Add Police Officer Details</h4></div>
+                      <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <label for="name" class="form-label"><h6>Name</h6></label>
+                                <input type="text" name="name" id="name" class="form-control" required placeholder="Enter Name">
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="email" class="form-label"><h6>Email</h6></label>
+                                <input type="email" name="email" id="email" class="form-control" required placeholder="Enter Email">
+                            </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <label for="password" class="form-label"><h6>Password</h6></label>
+                            <input type="password" name="password" id="password" class="form-control" required placeholder="Enter Password">
+                        </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="phone" class="form-label"><h6>Phone</h6></label>
+                                <input type="text" name="phone" id="phone" class="form-control" required placeholder="Enter Phone Number " maxlength="10" oninput="formatphone(this)">
+                            </div>
+                            <script>
+                                function formatphone(input) {
+                                    let phone = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+                                    let formattedphone = phone;
+                                    input.value = formattedphone;
+                                }
+                            </script>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <label for="DOB" class="form-label"><h6>Date of Birth</h6></label>
+                            <input type="date" name="DOB" id="DOB" class="form-control" required placeholder="Enter Date of Birth">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="ssn" class="form-label"><h6>SSN</h6></label>
+                            <input type="text" name="ssn" id="ssn" class="form-control" required placeholder="Enter SSN Number" maxlength="11" oninput="formatSSN(this)">
+                        </div>
+                        
+                        <script>
+                            function formatSSN(input) {
+                                let ssn = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+                                let formattedSSN = '';
+                        
+                                if (ssn.length > 0) {
+                                    formattedSSN += ssn.substr(0, 3);
+                                    if (ssn.length > 3) {
+                                        formattedSSN += '-' + ssn.substr(3, 2);
+                                        if (ssn.length > 5) {
+                                            formattedSSN += '-' + ssn.substr(5, 4);
+                                        }
+                                    }
+                                }
+                        
+                                input.value = formattedSSN;
+                            }
+                        </script>
+                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mt-3">
+                                <label for="address"><h6>Address</h6></label>
+                                <textarea id="address"  name="address" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mt-3">
+                                <label for="experience"><h6>Experience</h6></label>
+                                <input type="number" id="experience"  name="experience" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                      <div class="row">
+                              <div class=mt-3>
+                                    <label class="form-label"><h6>Gender</h6></label>&nbsp;&nbsp;
+                                    <input type="radio"  name="gender" value="Male" id="male"> <label class="" for="male">Male</label>&nbsp;
+                                    <input type="radio"  name="gender" value="Female" id="female"> <label  class="" for="female">Female</label>&nbsp;
+                              </div>
+                      </div>
+                        <div class="mt-3">
+                            <input type="submit" value="Add Details" class="btn btn-primary w-100">
+                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>
+
+

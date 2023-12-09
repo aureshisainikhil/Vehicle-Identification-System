@@ -1,0 +1,19 @@
+{% if input == "dmv" %}
+    {% include "ADhead.html" %}
+{% elif input == "police_officer" %}
+    {% include "APhead.html" %}
+{% else %}
+    {% include "Ahead.html" %}
+{% endif %}
+<body class="admin_home">
+     <div class="container mt-4">
+         <div class="row">
+            <div class="col-md-4"></div>
+             <div class="col-md-5 mt-5">
+                 <div class="card p-3 mt-2 bg-success ">
+                     <div class="text-center h3 mt-3 text-white">Welcome To Admin</div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>

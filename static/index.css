@@ -1,0 +1,37 @@
+.navbar{
+    background:#008B8B;
+    height:10%;
+    font-size:15px;
+    font-style: italic;
+    font-weight:bold;
+}
+
+.home{
+    background-image:url("https://c0.wallpaperflare.com/preview/202/999/824/united-states-boise-north-6th-street-lights.jpg");
+    background-repeat:no-repeat;
+    background-size:1400px;
+}
+
+.admin_home{
+    background-image:url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat:no-repeat;
+    background-size:1400px;
+}
+
+.dmv_home{
+    background-image:url("https://images.unsplash.com/photo-1516074640097-f7166cb7e85b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat:no-repeat;
+    background-size:1400px;
+}
+.driver_home{
+    background-image:url("https://images.unsplash.com/photo-1553782097-130fef5d3e27?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat:no-repeat;
+    background-size:1400px;
+}
+
+.officer_home{
+    background-image:url("https://images.unsplash.com/photo-1592822450587-1a027a740da3?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat:no-repeat;
+    background-size:1400px;
+}
+

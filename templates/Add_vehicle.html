@@ -1,0 +1,113 @@
+{% include "DVhead.html"%}
+<style>
+    [type="radio"] {
+        display:none;
+    }
+    [type="radio"]:checked + label {
+        background-color: green;
+        color: white;
+    }
+</style>
+<script>
+$(document).ready(function(){
+    get_customers()
+    $("#keyword").on("keyup", function(){
+        get_customers()
+    })
+});
+function get_customers(){
+    let keyword = $("#keyword").val()
+    let url = "http://127.0.0.1:5000/get_customer?keyword="+keyword
+    $.get(url, function(data, status){
+        $("#customers").html(data)
+    })
+}
+</script>
+<div class="container">
+    <form action="Add_vehicle1" method="post">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card p-3 mt-4">
+                    <div class="text-center"><h4>Add Vehicle Details</h4></div>
+<!--                <input type="text" name="vehicle_id" value="{{vehicle_id}}">-->
+                      <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <label for="vehicle_name" class="form-label"><h6>Vehicle Name</h6></label>
+                                <input type="text" name="vehicle_name" id="vehicle_name" class="form-control" required placeholder="Enter Vehicle Name">
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="vehicle_model" class="form-label"><h6>Vehicle Model</h6></label>
+                                <input type="text" name="vehicle_model" id="vehicle_model" class="form-control" required placeholder="Enter Vehicle Model">
+                            </div>
+                      </div>
+                      <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <label for="vehicle_type" class="form-label"><h6>Vehicle Type</h6></label>
+                                <input type="text" name="vehicle_type" id="vehicle_type" class="form-control" required placeholder="Enter Vehicle Type ">
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="vehicle_manufacturing_year" class="form-label"><h6>Vehicle Manufacturing Year</h6></label>
+                                <input type="number" name="vehicle_manufacturing_year" id="vehicle_manufacturing_year" class="form-control" required placeholder="Enter Vehicle Manufacturing Year">
+                            </div>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <label for="vehicle_capacity" class="form-label"><h6>Vehicle Capacity</h6></label>
+                            <input type="number" name="vehicle_capacity" id="vehicle_capacity" class="form-control" required placeholder="Enter Vehicle Capacity ">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="vehicle_mileage" class="form-label"><h6>Vehicle Mileage</h6></label>
+                            <input type="text" name="vehicle_mileage" id="vehicle_mileage" class="form-control" required placeholder="Enter Vehicle Mileage">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <label for="vehicle_register_number" class="form-label"><h6>Vehicle Tag Number</h6></label>
+                            <input type="text" name="vehicle_register_number" id="vehicle_register_number" class="form-control" required placeholder="Enter Vehicle Tag Number">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="insurance_number" class="form-label"><h6>Insurance Number</h6></label>
+                            <input type="text" name="insurance_number" id="insurance_number" class="form-control" required placeholder="Enter Insurance Number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <label for="vehicle_valid_from" class="form-label"><h6>Vehicle Valid From</h6></label>
+                            <input type="date" name="vehicle_valid_from" id="vehicle_valid_from" class="form-control" required placeholder="Vehicle Valid From">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="insurance_valid_from" class="form-label"><h6>Insurance Valid From</h6></label>
+                            <input type="date" name="insurance_valid_from" id="insurance_valid_from" class="form-control" required placeholder="Insurance Valid From">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <label for="vehicle_valid_to" class="form-label"><h6>Vehicle Valid To</h6></label>
+                            <input type="date" name="vehicle_valid_to" id="vehicle_valid_to" class="form-control" required placeholder="Vehicle Valid To">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="insurance_valid_to" class="form-label"><h6>Insurance Valid To</h6></label>
+                            <input type="date" name="insurance_valid_to" id="insurance_valid_to" class="form-control" required placeholder="Insurance Valid To">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                                <label for="vehicle_title" class="form-label"><h6>Vehicle Title Number</h6></label>
+                                <input type="text" name="vehicle_title" id="vehicle_title" class="form-control" required placeholder="Enter Vehicle Title Number">
+                        </div>
+                        <div class="col-md-6 mt-5">
+                                <input type="submit" value="Add Vehicle" class="btn btn-primary w-100">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mt-4">
+                <input type="search" id="keyword" placeholder="Search Customer" class="form-control">
+            </div>
+            <div id="customers"></div>
+        </div>
+    </div>
+    </form>
+
+</div>
