@@ -494,24 +494,6 @@ def add_ticket1():
     else:
         return render_template("msg.html", message="Driving Licence Number not Found")
 
-
-# @app.route("/view_ticket_risen")
-# def view_ticket_risen():
-#     vehicle_id = request.args.get('vehicle_id')
-#     query = {"vehicle_id": ObjectId(vehicle_id)}
-#     ticket = Ticket_col.find_one(query)
-#     if ticket is not None:
-#         police_officer_id = ticket['police_officer_id']
-#         query = {"_id": ObjectId(police_officer_id)}
-#         police_officer = Police_officer_col.find_one(query)
-#         query = {"vehicle_id": ObjectId(vehicle_id)}
-#         registration_documents = Registration_documents_col.find_one(query)
-#         query = {"vehicle_id": ObjectId(vehicle_id), "police_officer_id": ObjectId(police_officer_id)}
-#         tickets = Ticket_col.find(query)
-#         return render_template("view_ticket_risen.html", tickets=tickets, police_officer=police_officer, registration_documents=registration_documents, get_driver_by_vehicle_id=get_driver_by_vehicle_id)
-#     else:
-#         return render_template("msg.html", message="No Tickets Available")
-
 @app.route("/view_ticket_risen", methods=['POST'])
 def view_ticket_risen():
     vehicle_id = request.form.get('vehicle_id')
